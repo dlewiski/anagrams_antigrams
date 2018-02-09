@@ -4,24 +4,32 @@ class Words
     @word2 = word2
   end
 
+  def vowel_check letter_array
+    vowels = ["a", "e", "i", "o", "u", "y"]
+    has_vowel = false
+    letter_array.each do |letter|
+      vowels.each do |vowel|
+        if letter == vowel
+          has_vowel = true
+          break
+        end
+      end
+    end
+    has_vowel
+  end
+
   def check_letters
     first_word_array = @word1.downcase.split('').sort
     second_word_array = @word2.downcase.split('').sort
 
-    vowels = ["a", "e", "i", "o", "u", "y"]
-    has_vowel? == false
-    first_word_array.each do |letter|
-      vowels.each do |vowel|
-        if letter == vowel
-          has_vowel? == true
-        end
-    end
-
-
-    if first_word_array == second_word_array
-      "It's an anagram!"
+    if (vowel_check(first_word_array) == false) | (vowel_check(second_word_array) == false)
+      "You did not enter an actual word silly!"
     else
-      "It's not an anagram!"
+      if first_word_array == second_word_array
+        "It's an anagram!"
+      else
+        "It's not an anagram!"
+      end
     end
   end
 end
