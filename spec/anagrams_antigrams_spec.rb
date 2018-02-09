@@ -17,4 +17,9 @@ describe('#check_letters') do
     word1 = Words.new("srnn", "Plpc")
     expect(word1.check_letters()).to(eq("You did not enter an actual word silly!"))
   end
+
+  it('Check if either word has vowels') do
+    word1 = Words.new("srnn", "Plpc")
+    expect(word1.check_letters()).to(eq("You did not enter an actual word silly!"))
+  end
 end
