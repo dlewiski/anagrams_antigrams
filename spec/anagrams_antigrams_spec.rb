@@ -18,8 +18,8 @@ describe('#check_letters') do
     expect(word1.check_letters()).to(eq("You did not enter an actual word silly!"))
   end
 
-  it('Check if either word has vowels') do
-    word1 = Words.new("srnn", "Plpc")
-    expect(word1.check_letters()).to(eq("You did not enter an actual word silly!"))
+  it('Check if the words are antigrams') do
+    word1 = Words.new("people", "skis")
+    expect(word1.check_letters()).to(eq("None of these letters in each word match. These words are antigrams!"))
   end
 end

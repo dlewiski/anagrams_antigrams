@@ -18,6 +18,20 @@ class Words
     has_vowel
   end
 
+  def antigram_check letter_array1, letter_array2
+    same_letter = false
+    letter_array.each do |letter|
+      vowels.each do |vowel|
+        if letter == vowel
+          has_vowel = true
+          break
+        end
+      end
+    end
+    has_vowel
+  end
+
+
   def check_letters
     first_word_array = @word1.downcase.split('').sort
     second_word_array = @word2.downcase.split('').sort
