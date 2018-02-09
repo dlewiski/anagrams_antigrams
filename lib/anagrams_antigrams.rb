@@ -33,8 +33,8 @@ class Words
 
 
   def check_letters
-    first_word_array = @word1.downcase.split('').sort
-    second_word_array = @word2.downcase.split('').sort
+    first_word_array = @word1.gsub(/\W+/,"").downcase.split('').sort
+    second_word_array = @word2.gsub(/\W+/,"").downcase.split('').sort
 
     if (vowel_check(first_word_array) == false) | (vowel_check(second_word_array) == false)
       "You did not enter an actual word silly!"

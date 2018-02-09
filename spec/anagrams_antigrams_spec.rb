@@ -23,8 +23,8 @@ describe('#check_letters') do
     expect(word1.check_letters()).to(eq("None of the letters in each word match. These words are antigrams!"))
   end
 
-  it('Check if muiltiple words are anagrams') do
-    word1 = Words.new("loop tea", "eat pool")
+  it('Check if muiltiple words are anagrams regardless of punctuation, spacing, and case') do
+    word1 = Words.new("Loop .. tea?", "eAt $$pooL!")
     expect(word1.check_letters()).to(eq("It's an anagram!"))
   end
 end
