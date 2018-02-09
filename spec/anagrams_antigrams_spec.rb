@@ -2,8 +2,9 @@ require('rspec')
 require('pry')
 require('anagrams_antigrams')
 
-describe('#anagram') do
-  to('Check if two words are anagrams') do
-    expect(anagram("loop", "pool")).to(eq("It's and anagram!"))
+describe('#check_letter') do
+  it('Check if two words are anagrams') do
+    word1 = Words.new
+    expect(word1.check_letter("loop", "pool")).to(eq("It's not an anagram"))
   end
 end
