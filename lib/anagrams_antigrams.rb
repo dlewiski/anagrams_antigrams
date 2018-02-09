@@ -51,3 +51,15 @@ class Words
     end
   end
 end
+
+puts "Welcome to David's antagram-antigram calculator!"
+
+puts "Two words are anagrams if they contain the exact same letters in a different order. A word is an 'antigram' of another word if no letters match."
+
+puts "Enter the first word"
+word1 = gets
+puts "Enter the second word"
+word2 = gets
+
+anagram_test = Words.new(word1, word2)
+puts anagram_test.check_letters()
