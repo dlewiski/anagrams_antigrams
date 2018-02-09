@@ -20,6 +20,6 @@ describe('#check_letters') do
 
   it('Check if the words are antigrams') do
     word1 = Words.new("people", "skis")
-    expect(word1.check_letters()).to(eq("None of these letters in each word match. These words are antigrams!"))
+    expect(word1.check_letters()).to(eq("None of the letters in each word match. These words are antigrams!"))
   end
 end

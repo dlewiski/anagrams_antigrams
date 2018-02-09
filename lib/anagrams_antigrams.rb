@@ -20,15 +20,15 @@ class Words
 
   def antigram_check letter_array1, letter_array2
     same_letter = false
-    letter_array.each do |letter|
-      vowels.each do |vowel|
-        if letter == vowel
-          has_vowel = true
+    letter_array1.each do |first_letter|
+      letter_array2.each do |second_letter|
+        if first_letter == second_letter
+          same_letter = true
           break
         end
       end
     end
-    has_vowel
+    same_letter
   end
 
 
@@ -39,10 +39,14 @@ class Words
     if (vowel_check(first_word_array) == false) | (vowel_check(second_word_array) == false)
       "You did not enter an actual word silly!"
     else
-      if first_word_array == second_word_array
-        "It's an anagram!"
+      if antigram_check(first_word_array, second_word_array) == false
+        "None of the letters in each word match. These words are antigrams!"
       else
-        "It's not an anagram!"
+        if first_word_array == second_word_array
+          "It's an anagram!"
+        else
+          "It's not an anagram!"
+        end
       end
     end
   end
