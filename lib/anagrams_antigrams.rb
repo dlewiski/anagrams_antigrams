@@ -5,9 +5,9 @@ class Words
 
 
     if first_word_array == second_word_array
-      true
+      "It's an anagram!"
     else
-      false
+      "It's not an anagram!"
     end
   end
 end
